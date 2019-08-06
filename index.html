@@ -23,10 +23,10 @@
 			opacity: 0;
 			z-index: 1;
 
-			-webkit-transition: opacity 1s;
-			-moz-transition: opacity 1s;
-			-o-transition: opacity 1s;
-			transition: opacity 1s;
+			-webkit-transition: opacity 0.1s;
+			-moz-transition: opacity 0.1s;
+			-o-transition: opacity 0.1s;
+			transition: opacity 0.1s;
 			}
 
 		.showing{
@@ -60,7 +60,7 @@
     <script>
         var slides = document.querySelectorAll('#slides .slide');
         var currentSlide = 0;
-        var slideInterval = setInterval(nextSlide,30);
+        var slideInterval = setInterval(nextSlide,100);
 
         function nextSlide(){
 	            slides[currentSlide].className = 'slide';
@@ -80,7 +80,7 @@
         function playSlideshow(){
 	            pauseButton.innerHTML = 'Pause';
 	            playing = true;
-	            slideInterval = setInterval(nextSlide,30);
+	            slideInterval = setInterval(nextSlide,100);
         }
 
         pauseButton.onclick = function(){
