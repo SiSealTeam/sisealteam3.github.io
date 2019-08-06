@@ -122,10 +122,15 @@
 	       	slideInterval = setInterval(nextSlide,50);
         }
 
-        onkeypress = function(){
+        var callback = function() {
 	        if(playing){ pauseSlideshow(); }
 	        else{ playSlideshow(); }
-        }
+        };
+        
+        onkeypress = callback
+
+	temp.onclick = callback
+
 	</script>
 
 </html>
