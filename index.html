@@ -5,28 +5,43 @@
         <title>Si_Seal_Team</title>
     </head>
     <body>
-        <div class="fastslides" style="max-width:500px">
-            <img class="mySlides" src="img_01.jpg" style="width:100%">
-            <img class="mySlides" src="img_02.jpg" style="width:100%">
-            <img class="mySlides" src="img_03.jpg" style="width:100%">
-            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        <ul id="slides">
+            <li class="slide" src="img_01.jpg"></li>
+            <li class="slide" src="img_02.jpg"></li>
+            <li class="slide" src="img_03.jpg"></li>
         </div>
+        <button class="controls" id="pause">Pause</button>
     </body>
     <script>
-    var myIndex = 0;
-    carousel();
+        var slides = document.querySelectorAll('#slides .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide,1000);
 
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
+        function nextSlide(){
+	            slides[currentSlide].className = 'slide';
+	            currentSlide = (currentSlide+1)%slides.length;
+	            slides[currentSlide].className = 'slide showing';
         }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 50);
-    }
+
+        var playing = true;
+        var pauseButton = document.getElementById('pause');
+
+        function pauseSlideshow(){
+	            pauseButton.innerHTML = 'Play';
+	            playing = false;
+	            clearInterval(slideInterval);
+        }
+
+        function playSlideshow(){
+	            pauseButton.innerHTML = 'Pause';
+	            playing = true;
+	            slideInterval = setInterval(nextSlide,1000);
+        }
+
+        pauseButton.onclick = function(){
+	        if(playing){ pauseSlideshow(); }
+	        else{ playSlideshow(); }
+        }
 </script>
 
 </html>
