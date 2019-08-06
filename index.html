@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
-<script>
-    function myfunction(){
-        getElementById("circle") = "test.jpg"
-    }
-</script>
     <head>
         <meta charset="utf-8">
         <title>Si_Seal_Team</title>
     </head>
     <body>
-        <header>
-            <h1><a href="index.html">Si Seal Team</a></h1>
-        </header>
-        <article>
-            <img id = "circle" src= "IMG_2740.GIF">
-            <p id="pause" onclick="myfunction()">"circle"</p>
-        </article>
+        <div class="fastslides" style="max-width:500px">
+            <img class="mySlides" src="img_01.jpg" style="width:100%">
+            <img class="mySlides" src="img_02.jpg" style="width:100%">
+            <img class="mySlides" src="img_03.jpg" style="width:100%">
+        </div>
     </body>
+    <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 100);
+    }
+</script>
+
 </html>
