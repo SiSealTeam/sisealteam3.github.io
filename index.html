@@ -5,11 +5,6 @@
         <title>Si_Seal_Team</title>
     </head>
 	<style>
-		div.fixed{
-			position: fixed;
-			top: 150px;
-			left: 700px;
-		}
 		#slides{
 			position: relative;
 			width: 1404px;
@@ -55,8 +50,6 @@
 		<img class="slide" src="frame_15_delay-0.03s.gif">
 		<img class="slide" src="frame_16_delay-0.03s.gif">
 		<img class="slide" src="frame_17_delay-0.03s.gif">
-        </div>
-	<div class="fixed">
         	<button class="controls" id="pause">Pause</button>
 	</div>
     </body>
@@ -86,7 +79,7 @@
 	            slideInterval = setInterval(nextSlide,100);
         }
 
-        pauseButton.onclick = function(){
+        slides.onclick = function(){
 	        if(playing){ pauseSlideshow(); }
 	        else{ playSlideshow(); }
         }
