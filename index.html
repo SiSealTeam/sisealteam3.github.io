@@ -101,7 +101,7 @@
         var slides = document.querySelectorAll('#slides .slide');
 		var temp = document.getElementById('slides');
         var currentSlide = 0;
-        var slideInterval = setInterval(nextSlide,100);
+        var slideInterval = setInterval(nextSlide,50);
 
         function nextSlide(){
         	slides[currentSlide].className = 'slide';
@@ -119,7 +119,7 @@
 
         function playSlideshow(){
 			playing = true;
-	       	slideInterval = setInterval(nextSlide,100);
+	       	slideInterval = setInterval(nextSlide,50);
         }
 
         temp.onclick = function(){
