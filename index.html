@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
     <head>
         <meta charset="utf-8">
         <title>Si_Seal_Team</title>
@@ -22,8 +23,7 @@
 			height: 100%;
 			opacity: 0;
 			z-index: 1;
-
-			}
+		}
 
 		.showing{
 			opacity: 1;
@@ -32,55 +32,55 @@
 	</style>
     <body>
         <div id="slides">
-            	<img class="slide" src="frame_00_delay-0.03s.gif">
-            	<img class="slide" src="frame_01_delay-0.03s.gif">
-            	<img class="slide" src="frame_02_delay-0.03s.gif">
-		<img class="slide" src="frame_03_delay-0.03s.gif">
-		<img class="slide" src="frame_04_delay-0.03s.gif">
-		<img class="slide" src="frame_05_delay-0.03s.gif">
-		<img class="slide" src="frame_06_delay-0.03s.gif">
-		<img class="slide" src="frame_07_delay-0.03s.gif">
-		<img class="slide" src="frame_08_delay-0.03s.gif">
-		<img class="slide" src="frame_09_delay-0.03s.gif">
-		<img class="slide" src="frame_10_delay-0.03s.gif">
-		<img class="slide" src="frame_11_delay-0.03s.gif">
-		<img class="slide" src="frame_12_delay-0.03s.gif">
-		<img class="slide" src="frame_13_delay-0.03s.gif">
-		<img class="slide" src="frame_14_delay-0.03s.gif">
-		<img class="slide" src="frame_15_delay-0.03s.gif">
-		<img class="slide" src="frame_16_delay-0.03s.gif">
-		<img class="slide" src="frame_17_delay-0.03s.gif">
+        	<img class="slide" src="frame_00_delay-0.03s.gif">
+            <img class="slide" src="frame_01_delay-0.03s.gif">
+            <img class="slide" src="frame_02_delay-0.03s.gif">
+			<img class="slide" src="frame_03_delay-0.03s.gif">
+			<img class="slide" src="frame_04_delay-0.03s.gif">
+			<img class="slide" src="frame_05_delay-0.03s.gif">
+			<img class="slide" src="frame_06_delay-0.03s.gif">
+			<img class="slide" src="frame_07_delay-0.03s.gif">
+			<img class="slide" src="frame_08_delay-0.03s.gif">
+			<img class="slide" src="frame_09_delay-0.03s.gif">
+			<img class="slide" src="frame_10_delay-0.03s.gif">
+			<img class="slide" src="frame_11_delay-0.03s.gif">
+			<img class="slide" src="frame_12_delay-0.03s.gif">
+			<img class="slide" src="frame_13_delay-0.03s.gif">
+			<img class="slide" src="frame_14_delay-0.03s.gif">
+			<img class="slide" src="frame_15_delay-0.03s.gif">
+			<img class="slide" src="frame_16_delay-0.03s.gif">
+			<img class="slide" src="frame_17_delay-0.03s.gif">
 	</div>
     </body>
     <script>
         var slides = document.querySelectorAll('#slides .slide');
-	var temp = document.getElementById('slides');
+		var temp = document.getElementById('slides');
         var currentSlide = 0;
         var slideInterval = setInterval(nextSlide,100);
 
         function nextSlide(){
-	            slides[currentSlide].className = 'slide';
-	            currentSlide = (currentSlide+1)%slides.length;
-	            slides[currentSlide].className = 'slide showing';
+        	slides[currentSlide].className = 'slide';
+            currentSlide = (currentSlide+1)%slides.length;
+            slides[currentSlide].className = 'slide showing';
         }
 
         var playing = true;
         var pauseButton = document.getElementById('pause');
 
         function pauseSlideshow(){
-	           	playing = false;
-	            	clearInterval(slideInterval);
+	       	playing = false;
+	    	clearInterval(slideInterval);
         }
 
         function playSlideshow(){
 			playing = true;
-	            	slideInterval = setInterval(nextSlide,100);
+	       	slideInterval = setInterval(nextSlide,100);
         }
 
-        temp.onkeypress = function(){
+        temp.onclick = function(){
 	        if(playing){ pauseSlideshow(); }
 	        else{ playSlideshow(); }
         }
-</script>
+	</script>
 
 </html>
