@@ -68,15 +68,13 @@
         var pauseButton = document.getElementById('pause');
 
         function pauseSlideshow(){
-	            pauseButton.innerHTML = 'Play';
-	            playing = false;
-	            clearInterval(slideInterval);
+	           	playing = false;
+	            	clearInterval(slideInterval);
         }
 
         function playSlideshow(){
-	            pauseButton.innerHTML = 'Pause';
-	            playing = true;
-	            slideInterval = setInterval(nextSlide,100);
+			playing = true;
+	            	slideInterval = setInterval(nextSlide,100);
         }
 
         temp.onclick = function(){
